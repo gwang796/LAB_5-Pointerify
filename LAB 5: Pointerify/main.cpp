@@ -8,6 +8,9 @@
 #include <iostream>
 using namespace std;
 
+//function swap switches the values of two different integers
+//argument: two integer address
+//return: sum of integers
 int swap(int &, int &);
 
 int main() {
@@ -22,8 +25,10 @@ int main() {
 }
 
 int swap(int &a, int &b) {
-    int temp = a;
-    a = b;
+    int *pa = &a;
+    int *pb = &b;
+    int temp = *pa;
+    a = *pb;
     b = temp;
     return a + b;
 }
